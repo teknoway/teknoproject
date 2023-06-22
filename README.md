@@ -1,2 +1,2 @@
 # teknoproject
-sane
+Bu projemiz ile hareket eden robot yapacağız
