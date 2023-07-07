@@ -11,6 +11,7 @@
 long duration;
 float distanceCm;
 float distanceInch;
+int guc=0;
 Servo servo1;
 Servo servo2;
 
@@ -25,6 +26,7 @@ void setup() {
     pinMode(D8,INPUT);
 
 }
+
 void mesafe_olc() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -45,10 +47,20 @@ void ileri(){
   Serial.println(sw1);
   if(sw1==0||distanceCm<10)
   {
+if(guc==0)
+    guc = 1;
   servo1.write(90);
   delay(500);
   servo2.write(90);
   }
+else if(guc == 1)
+{
+  guc = 0:
+  servo1.write(0);
+  delay(500);
+  servo2.write(0);
+}
+  
 }
 void loop() {
 mesafe_olc(); 
